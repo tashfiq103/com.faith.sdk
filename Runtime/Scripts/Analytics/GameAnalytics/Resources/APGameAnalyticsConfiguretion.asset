@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e0bce3929c94610ae0dd8f70a948b8, type: 3}
+  m_Name: APGameAnalyticsConfiguretion
+  m_EditorClassIdentifier: 
+  _showSettings: 0
+  _nameOfConfiguretion: GameAnalytics
+  _isSDKIntegrated: 1
+  _enableAnalyticsEvent: 1
+  _trackProgressionEvent: 1
+  _trackAdEvent: 1
+  _subscribeToLionEvent: 0
+  _subscribeToLionEventUA: 0
+  _defaultWorldIndex: 1
