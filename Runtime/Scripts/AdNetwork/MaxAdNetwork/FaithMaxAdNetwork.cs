@@ -1,6 +1,6 @@
 ﻿namespace com.faith.sdk
 {
-#if APSdk_MaxAdNetwork
+#if FaithSdk_MaxAdNetwork
     public static class APMaxAdNetwork
     {
     #region Public Variables
@@ -15,9 +15,9 @@
 
         public static void Initialize(FaithBaseClassForAdConfiguretion adConfiguretion)
         {
-            RewardedAd = new APRewardedAdOnMaxAdNetwork(adConfiguretion);
-            InterstitialAd = new APInterstitialAdOnMaxAdNetwork(adConfiguretion);
-            BannerAd = new APBannerAdOnMaxAdNetwork(adConfiguretion);
+            RewardedAd = new FaithRewardedAdOnMaxAdNetwork(adConfiguretion);
+            InterstitialAd = new FaithInterstitialAdOnMaxAdNetwork(adConfiguretion);
+            BannerAd = new FaithBannerAdOnMaxAdNetwork(adConfiguretion);
         }
 
     #endregion

@@ -1,5 +1,5 @@
 ﻿
-#if APSdk_Facebook
+#if FaithSdk_Facebook
 
 namespace com.faith.sdk
 {

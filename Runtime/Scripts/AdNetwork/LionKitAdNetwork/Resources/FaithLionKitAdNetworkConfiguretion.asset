@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e927253ddfe5b45e79cb371c526d68bf, type: 3}
   m_Name: FaithLionKitAdNetworkConfiguretion
   m_EditorClassIdentifier: 
-  _showSettings: 1
+  _showSettings: 0
   _nameOfConfiguretion: LionKitAdNetwork
-  _isSDKIntegrated: 1
+  _isSDKIntegrated: 0
   _showRewardedAdSettings: 1
   _showInterstitialAdSettings: 1
   _showBannerAdSettings: 1

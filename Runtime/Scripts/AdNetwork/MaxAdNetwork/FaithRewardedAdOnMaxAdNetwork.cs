@@ -1,6 +1,6 @@
 ﻿namespace com.faith.sdk
 {
-#if APSdk_MaxAdNetwork
+#if FaithSdk_MaxAdNetwork
 
     using System.Threading.Tasks;
     using UnityEngine;
@@ -65,7 +65,7 @@
 
         private void OnRewardedAdDisplayedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) {
 
-            APSdkLogger.Log("Displayed Rewarded Ad");
+            FaithSdkLogger.Log("Displayed Rewarded Ad");
 
             _isEligibleForReward = false;
             IsAdRunning = true;
@@ -76,7 +76,7 @@
         private void OnRewardedAdFailedToDisplayEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo, MaxSdkBase.AdInfo adInfo)
         {
 
-            APSdkLogger.LogError("Failed To Display Rewarded Ad");
+            FaithSdkLogger.LogError("Failed To Display Rewarded Ad");
 
             // Rewarded ad failed to display. AppLovin recommends that you load the next ad.
             IsAdRunning = false;
@@ -87,13 +87,13 @@
 
         private void OnRewardedAdClickedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) {
 
-            APSdkLogger.Log("Clicked Rewarded Ad");
+            FaithSdkLogger.Log("Clicked Rewarded Ad");
         }
 
         private void OnRewardedAdHiddenEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
         {
 
-            APSdkLogger.Log("Closed Rewarded Ad");
+            FaithSdkLogger.Log("Closed Rewarded Ad");
 
             // Rewarded ad is hidden. Pre-load the next ad
             IsAdRunning = false;
@@ -106,7 +106,7 @@
         private void OnRewardedAdReceivedRewardEvent(string adUnitId, MaxSdk.Reward reward, MaxSdkBase.AdInfo adInfo)
         {
 
-            APSdkLogger.Log("Received Reward");
+            FaithSdkLogger.Log("Received Reward");
 
             // The rewarded ad displayed and the user should receive the reward.
             _isEligibleForReward = true;
@@ -138,7 +138,7 @@
             }
             else
             {
-                APSdkLogger.LogError(string.Format("RewardedAd is set to disabled in APSDKIntegrationManager. Please set the flag to 'true' to see RewardedAd"));
+                FaithSdkLogger.LogError(string.Format("RewardedAd is set to disabled in APSDKIntegrationManager. Please set the flag to 'true' to see RewardedAd"));
             }
         }
 

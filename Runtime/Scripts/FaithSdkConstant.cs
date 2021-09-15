@@ -4,9 +4,9 @@
     {
         public const float EDITOR_LABEL_WIDTH = 200;
 
-        public const string NameOfSDK = "APSdk";
+        public const string NameOfSDK = "FaithSdk";
 
-        public const string APSdk_LionKit = NameOfSDK + "_LionKit";
+        public const string FaithSdk_LionKit = NameOfSDK + "_LionKit";
     }
 }
 

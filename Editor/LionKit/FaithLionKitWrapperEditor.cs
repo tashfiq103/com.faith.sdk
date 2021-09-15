@@ -1,4 +1,4 @@
-﻿#if APSdk_LionKit
+﻿#if FaithSdk_LionKit
 
 namespace com.faith.sdk
 {

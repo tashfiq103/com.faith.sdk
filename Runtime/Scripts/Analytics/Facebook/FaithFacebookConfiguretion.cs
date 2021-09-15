@@ -12,7 +12,7 @@
     {
         #region Private Variables
 
-#if APSdk_Facebook
+#if FaithSdk_Facebook
 
         [HideInInspector, SerializeField] private string _facebookAppName;
         [HideInInspector, SerializeField] private string _facebookAppId;
@@ -44,7 +44,7 @@
 
         public override void PreCustomEditorGUI()
         {
-#if UNITY_EDITOR && APSdk_Facebook
+#if UNITY_EDITOR && FaithSdk_Facebook
 
             if(_facebookSettings == null)
                 _facebookSettings = Resources.Load<Facebook.Unity.Settings.FacebookSettings>("FacebookSettings");
@@ -90,7 +90,7 @@
 
         public override void Initialize(FaithSdkConfiguretionInfo apSdkConfiguretionInfo, bool isATTEnable = false)
         {
-#if APSdk_Facebook
+#if FaithSdk_Facebook
 
             if (FaithFacebookWrapper.Instance == null && IsAnalyticsEventEnabled)
             {
@@ -100,7 +100,7 @@
 
                 DontDestroyOnLoad(newAPFacebookWrapper);
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                 FaithFacebookWrapper.Instance.Initialize(
                         apSdkConfiguretionInfo,
                         this,

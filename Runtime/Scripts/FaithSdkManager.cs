@@ -1,7 +1,7 @@
 ﻿namespace com.faith.sdk
 {
     using UnityEngine;
-#if APSdk_LionKit
+#if FaithSdk_LionKit
     using LionStudios;
 #endif
 
@@ -52,6 +52,7 @@
             }
         }
 
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void OnGameStart()
         {
@@ -60,7 +61,7 @@
 
             FaithAnalytics.Initialize(_apSdkConfiguretionInfo);
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
 
             MaxSdkCallbacks.OnSdkInitializedEvent += (MaxSdkBase.SdkConfiguration sdkConfiguration) =>
             {
@@ -90,6 +91,25 @@
 
             
 
+#elif FaithSdk_MaxAdNetwork
+
+            MaxSdkCallbacks.OnSdkInitializedEvent += (MaxSdkBase.SdkConfiguration sdkConfiguration) =>
+            {
+#if UNITY_IOS
+                if (MaxSdkUtils.CompareVersions(Device.systemVersion, "14.5") != MaxSdkUtils.VersionComparisonResult.Lesser)
+                {
+                    FaithSdkLogger.Log("iOS 14.5+ detected!! SetAdvertiserTrackingEnabled = true");
+                    IsATTEnabled = sdkConfiguration.AppTrackingStatus == MaxSdkBase.AppTrackingStatus.Authorized;
+                }
+                else
+                {
+                    FaithSdkLogger.Log("iOS <14.5 detected!! Normal Mode");
+                }
+
+                InitializeAnalytics(_apSdkConfiguretionInfo, IsATTEnabled);
+                InitializeAdNetworks(_apSdkConfiguretionInfo, IsATTEnabled);
+#endif
+            };
 #else
              InitializeAnalytics(_apSdkConfiguretionInfo, IsATTEnabled);
              InitializeAdNetworks(_apSdkConfiguretionInfo, IsATTEnabled);

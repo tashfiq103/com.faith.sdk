@@ -2,7 +2,7 @@
 {
     using UnityEngine;
 
-#if APSdk_Adjust
+#if FaithSdk_Adjust
     using com.adjust.sdk;
 #endif
 
@@ -15,7 +15,7 @@
     {
         #region Public Variables
 
-#if APSdk_Adjust
+#if FaithSdk_Adjust
 
         public string appToken
         {
@@ -47,7 +47,7 @@
 
         #region Private Variables
 
-#if APSdk_Adjust
+#if FaithSdk_Adjust
 
 #if UNITY_EDITOR
 
@@ -88,14 +88,14 @@
 
         public override void PreCustomEditorGUI()
         {
-#if UNITY_EDITOR && APSdk_Adjust
+#if UNITY_EDITOR && FaithSdk_Adjust
 
 #endif
         }
 
         public override void PostCustomEditorGUI()
         {
-#if UNITY_EDITOR && APSdk_Adjust
+#if UNITY_EDITOR && FaithSdk_Adjust
 
             #region Settings    :   Basic
 
@@ -249,7 +249,7 @@
         public override void Initialize(FaithSdkConfiguretionInfo apSdkConfiguretionInfo, bool isATTEnable = false)
         {
 
-#if APSdk_Adjust
+#if FaithSdk_Adjust
             if (FaithAdjustWrapper.Instance == null && IsAnalyticsEventEnabled)
             {
 
@@ -260,7 +260,7 @@
 
                 FaithAdjustWrapper.Instance.Initialize(apSdkConfiguretionInfo, this);
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
 
                 if (_subscribeToLionEvent)
                 {

@@ -1,4 +1,4 @@
-﻿#if UNITY_IOS && APSdk_Facebook
+﻿#if UNITY_IOS && FaithSdk_Facebook
 
 using UnityEngine;
 using System.Runtime.InteropServices;

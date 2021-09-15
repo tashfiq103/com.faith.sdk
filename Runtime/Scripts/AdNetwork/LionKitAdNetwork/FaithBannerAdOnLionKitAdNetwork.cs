@@ -1,6 +1,6 @@
 ﻿namespace com.faith.sdk
 {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
 
     using LionStudios.Ads;
     

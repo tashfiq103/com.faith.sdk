@@ -9,14 +9,14 @@
         
         public override void Initialize(FaithSdkConfiguretionInfo apSdkConfiguretionInfo, bool isATTEnable = false)
         {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             FaithLionKitAdNetwork.Initialize(this);
 #endif
         }
 
         public override bool IsBannerAdReady()
         {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             return FaithLionKitAdNetwork.BannerAd.IsBannerAdReady();
 #else
             return false;
@@ -25,21 +25,21 @@
 
         public override void ShowBannerAd(string adPlacement = "banner", int playerLevel = 0)
         {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             FaithLionKitAdNetwork.BannerAd.ShowBannerAd(adPlacement, playerLevel);
 #endif
         }
 
         public override void HideBannerAd()
         {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             FaithLionKitAdNetwork.BannerAd.HideBannerAd();
 #endif
         }
 
         public override bool IsInterstitialAdReady()
         {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             return FaithLionKitAdNetwork.InterstitialAd.IsInterstitialAdReady();
 #else
             return false;
@@ -48,14 +48,14 @@
 
         public override void ShowInterstitialAd(string adPlacement = "interstitial", UnityAction OnAdFailed = null, UnityAction OnAdClosed = null)
         {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             FaithLionKitAdNetwork.InterstitialAd.ShowInterstitialAd(adPlacement, OnAdFailed, OnAdClosed);
 #endif
         }
 
         public override bool IsRewardedAdReady()
         {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             return FaithLionKitAdNetwork.RewardedAd.IsRewardedAdReady();
 #else
             return false;
@@ -64,14 +64,14 @@
 
         public override void ShowRewardedAd(string adPlacement, UnityAction<bool> OnAdClosed, UnityAction OnAdFailed = null)
         {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             FaithLionKitAdNetwork.RewardedAd.ShowRewardedAd(adPlacement, OnAdClosed, OnAdFailed);
 #endif
         }
 
         public override void SetNameAndIntegrationStatus()
         {
-            string sdkName = FaithSdkConstant.APSdk_LionKit;
+            string sdkName = FaithSdkConstant.FaithSdk_LionKit;
             SetNameOfConfiguretion(sdkName, "AdNetwork");
 #if UNITY_EDITOR
             _isSDKIntegrated = FaithSdkScriptDefiniedSymbol.CheckLionKitIntegration(sdkName);

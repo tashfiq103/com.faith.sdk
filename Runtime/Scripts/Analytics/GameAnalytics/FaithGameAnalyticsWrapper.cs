@@ -1,4 +1,4 @@
-﻿#if APSdk_GameAnalytics
+﻿#if FaithSdk_GameAnalytics
 
 namespace com.faith.sdk
 {

@@ -72,11 +72,11 @@ namespace com.faith.sdk
 
     #region Editor
 
-        [MenuItem("AP/APSdk Integration Manager")]
+        [MenuItem("Faith/FaithSdk Integration Manager")]
         public static void Create()
         {
             if (_reference == null)
-                _reference = GetWindow<FaithSdkIntegrationManagerEditorWindow>("APSdk Integration Manager", typeof(FaithSdkIntegrationManagerEditorWindow));
+                _reference = GetWindow<FaithSdkIntegrationManagerEditorWindow>("FaithSdk Integration Manager", typeof(FaithSdkIntegrationManagerEditorWindow));
             else
                 _reference.Show();
 
@@ -120,7 +120,7 @@ namespace com.faith.sdk
                 {
                     GeneralSettingGUI();
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                     EditorGUILayout.Space();
                     LionKitSettingsGUI();
 #endif
@@ -230,7 +230,7 @@ namespace com.faith.sdk
                             if (analyticsConfiguretion.CanBeSubscribedToLionLogEvent())
                             {
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                             EditorGUILayout.BeginHorizontal();
                             {
                                 EditorGUILayout.LabelField(_subscribeToLionEvent.displayName, GUILayout.Width(LabelWidth));

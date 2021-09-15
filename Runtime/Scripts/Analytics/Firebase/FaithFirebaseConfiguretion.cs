@@ -37,17 +37,17 @@
 
         public override void Initialize(FaithSdkConfiguretionInfo apSdkConfiguretionInfo, bool isATTEnable = false)
         {
-#if APSdk_Firebase
+#if FaithSdk_Firebase
 
-            if (APFirebaseWrapper.Instance == null && IsAnalyticsEventEnabled)
+            if (FaithFirebaseWrapper.Instance == null && IsAnalyticsEventEnabled)
             {
 
                 GameObject newAPFirebaseWrapper = new GameObject("APFirebaseWrapper");
-                APFirebaseWrapper.Instance = newAPFirebaseWrapper.AddComponent<APFirebaseWrapper>();
+                FaithFirebaseWrapper.Instance = newAPFirebaseWrapper.AddComponent<FaithFirebaseWrapper>();
 
                 DontDestroyOnLoad(newAPFirebaseWrapper);
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
 
                 APFirebaseWrapper.Instance.Initialize(
                             apSdkConfiguretionInfo,
@@ -135,7 +135,7 @@
                         );
 
 #else
-            APFirebaseWrapper.Instance.Initialize(apSdkConfiguretionInfo, this);
+            FaithFirebaseWrapper.Instance.Initialize(apSdkConfiguretionInfo, this);
 #endif
 
             }

@@ -1,6 +1,6 @@
 ﻿namespace com.faith.sdk
 {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
     using System.Collections.Generic;
     using System.Collections;
     using UnityEngine;
@@ -49,7 +49,7 @@
 
                     if (apSdkConfiguretionInfo.ShowMaxMediationDebugger)
                     {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                         MaxSdk.ShowMediationDebugger();
 #endif
                         FaithSdkLogger.Log("Showing Mediation Debugger");

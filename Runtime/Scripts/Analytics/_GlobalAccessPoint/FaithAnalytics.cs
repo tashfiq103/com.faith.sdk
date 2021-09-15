@@ -3,7 +3,7 @@
     using UnityEngine;
     using System.Collections.Generic;
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
     using LionStudios;
 #endif
 
@@ -17,7 +17,7 @@
             {
                 get
                 {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                     return Analytics.Key.Param.level;
 #else
                     return "level";
@@ -30,7 +30,7 @@
             {
                 get
                 {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                     return Analytics.Key.Param.score;
 #else
                     return "score";
@@ -44,7 +44,7 @@
             {
                 get
                 {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                     return Analytics.Key.Param.rank;
 #else
                     return "rank";
@@ -57,7 +57,7 @@
             {
                 get
                 {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                     return Analytics.Key.level_started;
 #else
                     return "level_started";
@@ -69,7 +69,7 @@
             {
                 get
                 {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                     return Analytics.Key.level_complete;
 #else
                     return "level_complete";
@@ -81,7 +81,7 @@
             {
                 get
                 {
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                     return Analytics.Key.level_fail;
 #else
                     return "level_failed";
@@ -110,7 +110,7 @@
 
             _apSdkConfiguretionInfo = apSdkConfiguretionInfo;
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             _isLionKitIntegrated = true;
 #endif
         }
@@ -129,32 +129,32 @@
                 if (score != null)
                     eventParam.Add(_isLionKitIntegrated ? Key.rank : Key.score, score);
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                 //if    :   LionKit Integrated
                 Analytics.LogEvent(Key.level_started, eventParam);
 #else
                 //if    :   LionKit Not Integrated
 
-#if APSdk_Facebook
-            //if    :   Facebook Integrated
+#if FaithSdk_Facebook
+                //if    :   Facebook Integrated
 
-                
-                APFacebookWrapper.Instance.ProgressionEvent(Key.level_started, eventParam);
+
+                FaithFacebookWrapper.Instance.ProgressionEvent(Key.level_started, eventParam);
 #endif
 
-#if APSdk_Adjust
-            //if    :   Adjust Integrated
-            
-                APAdjustWrapper.Instance.ProgressionEvent(Key.level_started, eventParam);
+#if FaithSdk_Adjust
+                //if    :   Adjust Integrated
+
+                FaithAdjustWrapper.Instance.ProgressionEvent(Key.level_started, eventParam);
 #endif
 
-#if APSdk_Firebase
+#if FaithSdk_Firebase
 
                 if (score == null)
-                    APFirebaseWrapper.Instance.ProgressionEvent(Key.level_started);
+                    FaithFirebaseWrapper.Instance.ProgressionEvent(Key.level_started);
                 else
                 {
-                    APFirebaseWrapper.Instance.ProgressionEvent(
+                    FaithFirebaseWrapper.Instance.ProgressionEvent(
                             Key.level_started,
                             Key.score,
                         (string)score
@@ -165,7 +165,7 @@
 
 #endif
 
-#if APSdk_GameAnalytics
+#if FaithSdk_GameAnalytics
                 //if    :   GameAnalytics Integrated
 
                 FaithGameAnalyticsWrapper.Instance.ProgressionEvents(
@@ -189,32 +189,32 @@
 
 
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                 //if    :   LionKit Integrated
                 Analytics.LogEvent(Key.level_complete, eventParam);
 #else
                 //if    :   LionKit Not Integrated
 
-#if APSdk_Facebook
-            //if    :   Facebook Integrated
-            
-                
-                APFacebookWrapper.Instance.ProgressionEvent(Key.level_complete, eventParam);
+#if FaithSdk_Facebook
+                //if    :   Facebook Integrated
+
+
+                FaithFacebookWrapper.Instance.ProgressionEvent(Key.level_complete, eventParam);
 #endif
 
-#if APSdk_Adjust
-            //if    :   Adjust Integrated
-            
-                APAdjustWrapper.Instance.ProgressionEvent(Key.level_complete, eventParam);
+#if FaithSdk_Adjust
+                //if    :   Adjust Integrated
+
+                FaithAdjustWrapper.Instance.ProgressionEvent(Key.level_complete, eventParam);
 #endif
 
-#if APSdk_Firebase
+#if FaithSdk_Firebase
 
                 if (score == null)
-                    APFirebaseWrapper.Instance.ProgressionEvent(Key.level_complete);
+                    FaithFirebaseWrapper.Instance.ProgressionEvent(Key.level_complete);
                 else
                 {
-                    APFirebaseWrapper.Instance.ProgressionEvent(
+                    FaithFirebaseWrapper.Instance.ProgressionEvent(
                             Key.level_complete,
                             Key.score,
                         (string)score
@@ -228,7 +228,7 @@
 
 
 
-#if APSdk_GameAnalytics
+#if FaithSdk_GameAnalytics
                 //if    :   GameAnalytics Integrated
 
                 FaithGameAnalyticsWrapper.Instance.ProgressionEvents(
@@ -248,31 +248,31 @@
                 if (score != null)
                     eventParam.Add(_isLionKitIntegrated ? Key.rank : Key.score, score);
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
                 //if    :   LionKit Integrated
                 Analytics.LogEvent(Key.level_failed, eventParam);
 #else
                 //if    :   LionKit Not Integrated
 
-#if APSdk_Facebook
-            //if    :   Facebook Integrated
+#if FaithSdk_Facebook
+                //if    :   Facebook Integrated
 
-                APFacebookWrapper.Instance.ProgressionEvent(Key.level_failed, eventParam);
+                FaithFacebookWrapper.Instance.ProgressionEvent(Key.level_failed, eventParam);
 #endif
 
-#if APSdk_Adjust
-            //if    :   Adjust Integrated
-            
-                APAdjustWrapper.Instance.ProgressionEvent(Key.level_failed, eventParam);
+#if FaithSdk_Adjust
+                //if    :   Adjust Integrated
+
+                FaithAdjustWrapper.Instance.ProgressionEvent(Key.level_failed, eventParam);
 #endif
 
-#if APSdk_Firebase
+#if FaithSdk_Firebase
 
                 if (score == null)
-                    APFirebaseWrapper.Instance.ProgressionEvent(Key.level_failed);
+                    FaithFirebaseWrapper.Instance.ProgressionEvent(Key.level_failed);
                 else
                 {
-                    APFirebaseWrapper.Instance.ProgressionEvent(
+                    FaithFirebaseWrapper.Instance.ProgressionEvent(
                             Key.level_failed,
                             Key.score,
                         (string)score
@@ -286,7 +286,7 @@
 
 
 
-#if APSdk_GameAnalytics
+#if FaithSdk_GameAnalytics
                 //if    :   GameAnalytics Integrated
 
                 FaithGameAnalyticsWrapper.Instance.ProgressionEvents(

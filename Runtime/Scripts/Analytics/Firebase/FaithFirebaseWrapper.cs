@@ -1,6 +1,6 @@
 ﻿namespace com.faith.sdk
 {
-#if APSdk_Firebase
+#if FaithSdk_Firebase
 
     using System.Collections.Generic;
     using UnityEngine;
@@ -8,11 +8,11 @@
     using Firebase;
     using Firebase.Analytics;
 
-    public class APFirebaseWrapper : MonoBehaviour
+    public class FaithFirebaseWrapper : MonoBehaviour
     {
         #region Public Variables
 
-        public static APFirebaseWrapper Instance;
+        public static FaithFirebaseWrapper Instance;
 
         #endregion
 

@@ -1,6 +1,6 @@
 ﻿namespace com.faith.sdk
 {
-#if APSdk_MaxAdNetwork
+#if FaithSdk_MaxAdNetwork
 
     using UnityEngine;
 
@@ -40,7 +40,7 @@
             }
             else
             {
-                APSdkLogger.LogError(string.Format("BannerAd is set to disabled in APSDKIntegrationManager. Please set the flag to 'true' to see BannerAd"));
+                FaithSdkLogger.LogError(string.Format("BannerAd is set to disabled in APSDKIntegrationManager. Please set the flag to 'true' to see BannerAd"));
             }
         }
 

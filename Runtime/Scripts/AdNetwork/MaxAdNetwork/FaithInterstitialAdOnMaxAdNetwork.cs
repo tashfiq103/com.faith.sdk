@@ -1,6 +1,6 @@
 ﻿namespace com.faith.sdk
 {
-#if APSdk_MaxAdNetwork
+#if FaithSdk_MaxAdNetwork
 
     using System.Threading.Tasks;
     using UnityEngine;
@@ -48,12 +48,12 @@
 
         private void OnInterstitialDisplayedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) {
 
-            APSdkLogger.Log("Displayed InterstitialAd");
+            FaithSdkLogger.Log("Displayed InterstitialAd");
         }
 
         private void OnInterstitialAdFailedToDisplayEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo, MaxSdkBase.AdInfo adInfo)
         {
-            APSdkLogger.LogError("Failed To Display InterstitialAd");
+            FaithSdkLogger.LogError("Failed To Display InterstitialAd");
 
             // Interstitial ad failed to display. AppLovin recommends that you load the next ad.
             LoadAd();
@@ -63,12 +63,12 @@
 
         private void OnInterstitialClickedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) {
 
-            APSdkLogger.Log("Clicked InterstitialAd");
+            FaithSdkLogger.Log("Clicked InterstitialAd");
         }
 
         private void OnInterstitialHiddenEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
         {
-            APSdkLogger.Log("Closed InterstitialAd");
+            FaithSdkLogger.Log("Closed InterstitialAd");
 
             // Interstitial ad is hidden. Pre-load the next ad.
             LoadAd();
@@ -117,7 +117,7 @@
             }
             else
             {
-                APSdkLogger.LogError(string.Format("InterstitialAd is set to disabled in APSDKIntegrationManager. Please set the flag to 'true' to see InterstitialAd"));
+                FaithSdkLogger.LogError(string.Format("InterstitialAd is set to disabled in APSDKIntegrationManager. Please set the flag to 'true' to see InterstitialAd"));
             }
         }
 

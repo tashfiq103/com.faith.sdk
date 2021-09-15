@@ -4,11 +4,11 @@
     using UnityEngine.Events;
     using System.Collections.Generic;
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
     using LionStudios;
 #endif
 
-#if APSdk_GameAnalytics
+#if FaithSdk_GameAnalytics
     using GameAnalyticsSDK;
 #endif
 
@@ -31,26 +31,26 @@
 
         private static void LogEvent(string paramName, string paramValue, string eventName, Dictionary<string, object> eventParams) {
 
-#if APSdk_LionKit
+#if FaithSdk_LionKit
             Analytics.LogEvent(eventName, eventParams);
 #else
 
-#if APSdk_Facebook
-                            APFacebookWrapper.Instance.AdEvent(
+#if FaithSdk_Facebook
+                            FaithFacebookWrapper.Instance.AdEvent(
                                     eventName,
                                     eventParams
                                 );
 #endif
 
-#if APSdk_Adjust
-                            APAdjustWrapper.Instance.AdEvent(
+#if FaithSdk_Adjust
+                            FaithAdjustWrapper.Instance.AdEvent(
                                     eventName,
                                     eventParams
                                 );
 #endif
 
-#if APSdk_Firebase
-                            APFirebaseWrapper.Instance.AdEvent(
+#if FaithSdk_Firebase
+                            FaithFirebaseWrapper.Instance.AdEvent(
                                     eventName,
                                     paramName,
                                     paramValue
@@ -96,7 +96,7 @@
 
                             LogEvent(paramName, paramValue, eventName, eventParams);
 
-#if APSdk_GameAnalytics
+#if FaithSdk_GameAnalytics
                             FaithGameAnalyticsWrapper.Instance.AdEvent(
                                 isEligibleForReward ? GAAdAction.RewardReceived : GAAdAction.Show,
                                 GAAdType.RewardedVideo,
@@ -120,7 +120,7 @@
 
                             LogEvent(paramName, paramValue, eventName, eventParams);
 
-#if APSdk_GameAnalytics
+#if FaithSdk_GameAnalytics
                             FaithGameAnalyticsWrapper.Instance.AdEvent(
                                 GAAdAction.FailedShow,
                                 GAAdType.RewardedVideo,

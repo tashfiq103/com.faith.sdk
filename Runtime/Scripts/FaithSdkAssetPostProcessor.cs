@@ -14,7 +14,7 @@
 
             SerializedProperty _isLionKitIntegrated = _serializedSDKConfiguretionInfo.FindProperty("_isLionKitIntegrated");
 
-            _isLionKitIntegrated.boolValue = FaithSdkScriptDefiniedSymbol.CheckLionKitIntegration(FaithSdkConstant.APSdk_LionKit);
+            _isLionKitIntegrated.boolValue = FaithSdkScriptDefiniedSymbol.CheckLionKitIntegration(FaithSdkConstant.FaithSdk_LionKit);
             _isLionKitIntegrated.serializedObject.ApplyModifiedProperties();
 
             Object[] analyticsConfiguretionObjects = Resources.LoadAll("", typeof(FaithBaseClassForAnalyticsConfiguretion));

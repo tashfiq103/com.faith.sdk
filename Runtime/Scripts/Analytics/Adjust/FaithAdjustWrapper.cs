@@ -1,4 +1,4 @@
-﻿#if APSdk_Adjust
+﻿#if FaithSdk_Adjust
 
 namespace com.faith.sdk
 {

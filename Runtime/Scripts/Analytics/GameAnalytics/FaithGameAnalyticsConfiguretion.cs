@@ -23,7 +23,7 @@
 
         [HideInInspector, SerializeField] private int _defaultWorldIndex = 1;
 
-#if UNITY_EDITOR && APSdk_GameAnalytics
+#if UNITY_EDITOR && FaithSdk_GameAnalytics
         private GameAnalyticsSDK.Setup.Settings _gaSettings;
         private Editor _gaSettingsEditor;
         private bool _isShowingGASettings;
@@ -50,7 +50,7 @@
 
         public override void PreCustomEditorGUI()
         {
-#if UNITY_EDITOR && APSdk_GameAnalytics
+#if UNITY_EDITOR && FaithSdk_GameAnalytics
 
             if (IsAnalyticsEventEnabled) {
 
@@ -75,7 +75,7 @@
 
         public override void PostCustomEditorGUI()
         {
-#if UNITY_EDITOR && APSdk_GameAnalytics
+#if UNITY_EDITOR && FaithSdk_GameAnalytics
                 FaithSdkEditorModule.DrawHorizontalLine();
 
                 EditorGUILayout.BeginVertical();
@@ -96,7 +96,7 @@
 
         public override void Initialize(FaithSdkConfiguretionInfo apSdkConfiguretionInfo, bool isATTEnable = false)
         {
-#if APSdk_GameAnalytics
+#if FaithSdk_GameAnalytics
             if (FaithGameAnalyticsWrapper.Instance == null && IsAnalyticsEventEnabled)
             {
                 Instantiate(Resources.Load("GameAnalytics/AP_GameAnalytics"));
