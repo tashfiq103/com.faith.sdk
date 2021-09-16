@@ -18,7 +18,7 @@ MonoBehaviour:
   _showAdNetworks: 1
   _showABTestSetting: 0
   _showDebuggingSetting: 0
-  _isLionKitIntegrated: 0
+  _isLionKitIntegrated: 1
   _enableAnalyticsEvents: 0
   _selectedAdConfiguretion: {fileID: 11400000, guid: a187bd99ed2934aa598eadd41941cc7c,
     type: 2}

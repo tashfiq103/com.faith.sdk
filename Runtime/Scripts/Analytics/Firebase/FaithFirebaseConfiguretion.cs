@@ -49,7 +49,7 @@
 
 #if FaithSdk_LionKit
 
-                APFirebaseWrapper.Instance.Initialize(
+                FaithFirebaseWrapper.Instance.Initialize(
                             apSdkConfiguretionInfo,
                             this,
                             () =>
@@ -89,7 +89,7 @@
                                             }
                                         }
 
-                                        APFirebaseWrapper.Instance.LogFirebaseEvent(gameEvent.eventName, parameters);
+                                        FaithFirebaseWrapper.Instance.LogFirebaseEvent(gameEvent.eventName, parameters);
                                     };
                                 }
 
@@ -128,7 +128,7 @@
                                             }
                                         }
 
-                                        APFirebaseWrapper.Instance.LogFirebaseEvent(gameEvent.eventName, parameters);
+                                        FaithFirebaseWrapper.Instance.LogFirebaseEvent(gameEvent.eventName, parameters);
                                     };
                                 }
                             }
